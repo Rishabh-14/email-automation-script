@@ -1,3 +1,4 @@
+'''
 import smtplib
 from email.message import EmailMessage
 
@@ -9,12 +10,13 @@ msg['Subject'] = 'Test email'
 msg.set_content('Hello python ')
 
 #add attachment -> read object -> application type -> filename
-with open('report.pdf','rb') as f:
+with open('report.pdf','rb') as f: # add attachment
     msg.add_Attachment(f.read(),maintype = 'application', subtype = 'octet-stream',filename = 'report.pdf')
 
 # start server -> login -> message
 
 with smtplib.SMTP('smtp.example.com', 587) as server:
-    server.starttls()
-    server.login('you@example.com', 'password')
-    server.send_message(msg)
+    server.starttls() # This starts the server
+    server.login('you@example.com', 'password') # Authenticated login using email and password
+    server.send_message(msg) # Sends email from message
+'''
