@@ -11,5 +11,4 @@ msg.select('inbox')
 satatus, message.numbers = mail.search(None,'ALL')
 for num in message_numbers[0].split():
     status, msg_data = mail.fetch(num,'RFS')
-    email_message = message_from_bytes[0]
-[1]
+    email_message = message_from_bytes[0][1]
